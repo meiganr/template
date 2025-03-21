@@ -30,6 +30,8 @@ public enum Direction {
     }
 
     public String getValue() {
-        return val;  // ✅ Return short-form (N, E, S, W) instead of full name
+        return val;  
+
     }
 }
+
