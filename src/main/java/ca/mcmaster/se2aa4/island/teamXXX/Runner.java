@@ -1,25 +1,19 @@
 package ca.mcmaster.se2aa4.island.teamXXX;
 
-import static eu.ace_design.island.runner.Runner.run;
-
 import java.io.File;
+
+import static eu.ace_design.island.runner.Runner.run;
 
 public class Runner {
 
     public static void main(String[] args) {
-        System.out.println("Starting"); 
-        System.out.println("The argument is " + args[0]); 
-        String filename = args[0];  // Use the provided map file
-        
-
-
-        // String filename = args[0];
+        String filename = args[0];
         try {
             run(Explorer.class)
                     .exploring(new File(filename))
                     .withSeed(42L)
                     .startingAt(1, 1, "EAST")
-                    .backBefore(7000)
+                    .backBefore(1000000) // changed this for test
                     .withCrew(5)
                     .collecting(1000, "WOOD")
                     .storingInto("./outputs")
